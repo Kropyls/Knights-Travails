@@ -3,6 +3,7 @@
 # Board class to hold all pieces in play
 class Board
   attr_reader :board_as_array
+
   def initialize
     @board_as_array = Array.new(8) { Array.new(8, nil) }
   end
