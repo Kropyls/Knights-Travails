@@ -54,7 +54,7 @@ end
 
 # tracks current positon and options in a tree like state
 class PositionAndOptions
-  attr_accessor :position, :children, :parent
+  attr_accessor :position, :parent
 
   def initialize(position, parent = nil)
     @position = position
