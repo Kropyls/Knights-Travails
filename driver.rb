@@ -9,4 +9,4 @@ board.print_board
 
 knight = board.accessor([6, 4])
 
-p knight.move_options
+knight.knight_moves([6, 4], [7, 5])
