@@ -44,8 +44,9 @@ class Knight
       node = queue.pop
       return node if node.position == destination
 
-      node.children = move_options(node.position).map { |opt| PositionAndOptions.new(opt, node) }
-      node.children.each { |child| queue.push(child) }
+      move_options(node.position)
+        .map { |opt| PositionAndOptions.new(opt, node) }
+        .each { |child| queue.push(child) }
     end
     raise "Fault: find_destination_node failed with: start: #{start} and destination: #{destination}."
   end
@@ -57,7 +58,6 @@ class PositionAndOptions
 
   def initialize(position, parent = nil)
     @position = position
-    @children = nil
     @parent = parent
   end
 end
